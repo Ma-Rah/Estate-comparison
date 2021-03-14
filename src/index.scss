@@ -1,0 +1,139 @@
+// body section
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+		"Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+// general modifiers
+.text--bold {
+	font-weight: bold;
+}
+
+.bg--red {
+	background-color: rgb(229, 163, 151);
+}
+
+.bg--green {
+	background-color: rgb(151, 212, 149);
+}
+
+.cursor--pointer {
+	cursor: pointer;
+}
+
+// header section
+.header {
+	display: flex;
+	place-content: center;
+	place-items: center;
+	border-bottom: 1px lightgray solid;
+
+	&__title {
+		color: rgb(151, 156, 161);
+		font-size: 2.5rem;
+	}
+}
+
+// list section
+.card__list {
+	display: flex;
+	padding: 1rem 8rem;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+
+	&__gallery {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	&__update__button {
+		padding: 0.5rem;
+		margin: 0.5rem;
+		height: 2rem;
+		border: 1px solid rgba(112, 128, 144, 0.411);
+		background-color: white;
+		font-weight: bold;
+	}
+
+	&__button {
+		padding: 0.5rem;
+		margin: 0.5rem;
+		border: 1px solid rgba(112, 128, 144, 0.411);
+		background-color: white;
+		font-weight: bold;
+	}
+
+	&__item {
+		width: 10rem;
+		height: 7rem;
+		display: flex;
+		flex-flow: column nowrap;
+		margin: 0.2rem;
+	}
+	&__image {
+		object-fit: cover;
+		overflow: hidden;
+	}
+
+	&__text {
+		font-size: 0.7rem;
+	}
+}
+
+// main card  section
+.main__cards {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.main__card {
+	display: flex;
+	flex-flow: column wrap;
+	height: 100%;
+	border: 1px solid gray;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	margin: 0 0.5rem;
+
+	&__details {
+		padding: 0.25rem;
+
+		& div {
+			display: flex;
+			justify-content: space-between;
+			line-height: 1.5rem;
+			padding: 0.25rem;
+			background-color: white;
+		}
+	}
+
+	&__company {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 1rem;
+		height: 5rem;
+
+		& img {
+			width: 4rem;
+			margin-right: 0.5rem;
+		}
+	}
+}
