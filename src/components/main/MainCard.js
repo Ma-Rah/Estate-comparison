@@ -14,6 +14,7 @@ function MainCard(props) {
 
 	return (
 		<div className="main__card">
+			<span className="main__card--close">X</span>
 			<div>{images ? <img src={images && images[0]} alt={name} /> : null}</div>
 			<div className="main__card__details">
 				<div>{name}</div>
@@ -46,7 +47,6 @@ function MainCard(props) {
 					<span>{land_area} m²</span>
 				</div>
 			</div>
-
 			<div className="main__card__company">
 				{company_logo ? <img src={company_logo} alt={name} /> : null}
 				<p>{company_name}</p>

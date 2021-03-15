@@ -1,11 +1,11 @@
 import Header from "./components/header/Header";
-import Main from "./components/main/Main";
+import CardList from "./components/main/CardList";
 
 function App() {
 	return (
 		<div>
 			<Header />
-			<Main />
+			<CardList />
 		</div>
 	);
 }
