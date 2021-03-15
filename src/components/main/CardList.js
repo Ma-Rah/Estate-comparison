@@ -26,10 +26,6 @@ function CardList() {
 	}, []);
 
 	useEffect(() => {
-		compareCards();
-	}, [dataA, dataB]);
-
-	function compareCards() {
 		if (dataA && dataB) {
 			// convert object strings to numbers for comparison
 			let priceA = dataA.prize_czk;
@@ -60,7 +56,7 @@ function CardList() {
 		} else {
 			return;
 		}
-	}
+	}, [dataA, dataB]);
 
 	function nextPage() {
 		if (pageIndex[1] <= list.length) {
