@@ -75,57 +75,59 @@ function CardList() {
 	}
 
 	return (
-		<div className="card__list">
-			<div className="card__list__navigation">
-				<div className="card__list__update__button" onClick={previousPage}>
-					Previous 10
+		<div className="container">
+			<div className="card__list">
+				<div className="card__list__navigation">
+					<div className="card__list__update__button" onClick={previousPage}>
+						Previous 10
+					</div>
+					<div className="card__list__update__button" onClick={nextPage}>
+						Next 10
+					</div>
 				</div>
-				<div className="card__list__update__button" onClick={nextPage}>
-					Next 10
-				</div>
-			</div>
 
-			<div className="card__list__gallery">
-				{list.slice(pageIndex[0], pageIndex[1]).map((item, key) => {
-					return (
-						<div
-							key={key}
-							className="card__list__item cursor--pointer"
-							onClick={() => {
-								!dataA ? setDataA(item) : setDataB(item);
-							}}
-						>
-							<img src={item.images[0]} alt={item.name_extracted} className="card__list__image" />
-							<div className="card__list__text">
-								{item.name_extracted} {item.locality}
+				<div className="card__list__gallery">
+					{list.slice(pageIndex[0], pageIndex[1]).map((item, key) => {
+						return (
+							<div
+								key={key}
+								className="card__list__item cursor--pointer"
+								onClick={() => {
+									!dataA ? setDataA(item) : setDataB(item);
+								}}
+							>
+								<img src={item.images[0]} alt={item.name_extracted} className="card__list__image" />
+								<div className="card__list__text">
+									{item.name_extracted} {item.locality}
+								</div>
 							</div>
+						);
+					})}
+				</div>
+
+				<div className="main__cards">
+					{dataA ? (
+						<div onClick={() => setDataA(null)}>
+							<MainCard
+								data={dataA}
+								priceComparison={priceComparison[0]}
+								floorComparison={floorComparison[0]}
+								landComparison={landComparison[0]}
+							/>
 						</div>
-					);
-				})}
-			</div>
+					) : null}
 
-			<div className="main__cards">
-				{dataA ? (
-					<div onClick={() => setDataA(null)}>
-						<MainCard
-							data={dataA}
-							priceComparison={priceComparison[0]}
-							floorComparison={floorComparison[0]}
-							landComparison={landComparison[0]}
-						/>
-					</div>
-				) : null}
-
-				{dataB ? (
-					<div onClick={() => setDataB(null)}>
-						<MainCard
-							data={dataB}
-							priceComparison={priceComparison[1]}
-							floorComparison={floorComparison[1]}
-							landComparison={landComparison[1]}
-						/>
-					</div>
-				) : null}
+					{dataB ? (
+						<div onClick={() => setDataB(null)}>
+							<MainCard
+								data={dataB}
+								priceComparison={priceComparison[1]}
+								floorComparison={floorComparison[1]}
+								landComparison={landComparison[1]}
+							/>
+						</div>
+					) : null}
+				</div>
 			</div>
 		</div>
 	);

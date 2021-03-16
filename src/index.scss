@@ -50,11 +50,17 @@ code {
 	}
 }
 
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 // list section
 .card__list {
 	display: flex;
-	padding: 1rem;
-	flex-flow: column wrap;
+	padding: 0.25rem;
+	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
 
@@ -101,10 +107,11 @@ code {
 
 	&__item {
 		width: 10rem;
-		height: 7rem;
+		height: 8rem;
 		display: flex;
-		flex-flow: column nowrap;
 		margin: 0.2rem;
+		flex-flow: column nowrap;
+
 		&:active {
 			border: lightblue 5px solid;
 		}
@@ -123,6 +130,7 @@ code {
 .main__cards {
 	display: flex;
 	flex-flow: column nowrap;
+	margin: 1rem 0;
 
 	@media (min-width: 1024px) {
 		flex-flow: row nowrap;
@@ -135,8 +143,8 @@ code {
 	border: 1px solid gray;
 	padding: 0.5rem 1rem 0 1rem;
 	border-radius: 0.25rem;
-	margin: 1rem 0.5rem;
 	cursor: pointer;
+	width: 100%;
 
 	&--close {
 		color: rgb(226, 104, 104);
