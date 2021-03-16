@@ -122,13 +122,16 @@ code {
 // main card  section
 .main__cards {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column nowrap;
+
+	@media (min-width: 1024px) {
+		flex-flow: row nowrap;
+	}
 }
 
 .main__card {
 	display: flex;
 	flex-flow: column wrap;
-	height: 100%;
 	border: 1px solid gray;
 	padding: 0.5rem 1rem 0 1rem;
 	border-radius: 0.25rem;
