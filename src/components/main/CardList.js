@@ -76,10 +76,16 @@ function CardList() {
 
 	return (
 		<div className="card__list">
-			<div className="card__list__gallery">
-				<span className="card__list__update__button" onClick={previousPage}>
+			<div className="card__list__navigation">
+				<div className="card__list__update__button" onClick={previousPage}>
 					Previous 10
-				</span>
+				</div>
+				<div className="card__list__update__button" onClick={nextPage}>
+					Next 10
+				</div>
+			</div>
+
+			<div className="card__list__gallery">
 				{list.slice(pageIndex[0], pageIndex[1]).map((item, key) => {
 					return (
 						<div
@@ -96,9 +102,6 @@ function CardList() {
 						</div>
 					);
 				})}
-				<span className="card__list__update__button" onClick={nextPage}>
-					Next 10
-				</span>
 			</div>
 
 			<div className="main__cards">

@@ -25,14 +25,6 @@ code {
 	font-weight: bold;
 }
 
-.bg--red {
-	background-color: rgb(229, 163, 151);
-}
-
-.bg--green {
-	background-color: rgb(151, 212, 149);
-}
-
 .cursor--pointer {
 	cursor: pointer;
 }
@@ -43,26 +35,39 @@ code {
 	place-content: center;
 	place-items: center;
 	border-bottom: 1px lightgray solid;
+	min-width: 100vw;
 
 	&__title {
 		color: rgb(151, 156, 161);
-		font-size: 2.5rem;
+		font-size: 1.5rem;
 	}
 }
 
 // list section
 .card__list {
 	display: flex;
-	padding: 1rem 8rem;
+	padding: 1rem;
 	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
 
-	&__gallery {
+	&__navigation {
+		margin-bottom: 1rem;
 		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-		align-items: center;
+	}
+
+	&__gallery {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(1fr);
+
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@media (min-width: 1024px) {
+			grid-template-columns: repeat(5, 1fr);
+		}
 	}
 
 	&__update__button {
@@ -121,7 +126,6 @@ code {
 	display: flex;
 	flex-flow: column wrap;
 	height: 100%;
-
 	border: 1px solid gray;
 	padding: 0.5rem 1rem 0 1rem;
 	border-radius: 0.25rem;
