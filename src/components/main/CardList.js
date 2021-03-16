@@ -8,9 +8,9 @@ function CardList() {
 	const [dataB, setDataB] = useState(false);
 
 	// Set color after comparing the values of both estates
-	const [priceComparison, setPriceComparison] = useState("white");
-	const [floorComparison, setFloorComparison] = useState("white");
-	const [landComparison, setLandComparison] = useState("white");
+	const [priceComparison, setPriceComparison] = useState(["white", "white"]);
+	const [floorComparison, setFloorComparison] = useState(["white", "white"]);
+	const [landComparison, setLandComparison] = useState(["white", "white"]);
 	const [pageIndex, setPageIndex] = useState([0, 10]);
 
 	// fetch section
@@ -36,19 +36,25 @@ function CardList() {
 			let landAreaB = Number(dataB.land_area);
 
 			// update color to red or green depending on value
-			if (priceA > priceB) {
-				setPriceComparison(["tomato", "lightgreen"]);
-			} else {
+			if (priceA === priceB) {
+				setPriceComparison(["white", "white"]);
+			} else if (priceA < priceB) {
 				setPriceComparison(["lightgreen", "tomato"]);
+			} else {
+				setPriceComparison(["tomato", "lightgreen"]);
 			}
 
-			if (floorAreaA > floorAreaB) {
+			if (floorAreaA === floorAreaB) {
+				setFloorComparison(["white", "white"]);
+			} else if (floorAreaA > floorAreaB) {
 				setFloorComparison(["lightgreen", "tomato"]);
 			} else {
 				setFloorComparison(["tomato", "lightgreen"]);
 			}
 
-			if (landAreaA > landAreaB) {
+			if (landAreaA === landAreaB) {
+				setLandComparison(["white", "white"]);
+			} else if (landAreaA > landAreaB) {
 				setLandComparison(["lightgreen", "tomato"]);
 			} else {
 				setLandComparison(["tomato", "lightgreen"]);
