@@ -10,7 +10,13 @@ function MainCard(props) {
 		building_area,
 		company_logo,
 		company_name,
-	} = props.card;
+	} = props.data;
+
+	const {
+		priceComparison: priceColor,
+		floorComparison: areaColor,
+		landComparison: landColor,
+	} = props;
 
 	return (
 		<div className="main__card">
@@ -20,7 +26,7 @@ function MainCard(props) {
 				<div>{name}</div>
 				<div
 					style={{
-						backgroundColor: props.priceIsGreater,
+						backgroundColor: priceColor,
 					}}
 				>
 					<span className="text--bold">Price</span>
@@ -32,7 +38,7 @@ function MainCard(props) {
 				</div>
 				<div
 					style={{
-						backgroundColor: props.floorAreaIsGreater,
+						backgroundColor: areaColor,
 					}}
 				>
 					<span className="text--bold">Floor area</span>
@@ -40,7 +46,7 @@ function MainCard(props) {
 				</div>
 				<div
 					style={{
-						backgroundColor: props.landAreaIsGreater,
+						backgroundColor: landColor,
 					}}
 				>
 					<span className="text--bold ">Land area</span>

@@ -8,9 +8,9 @@ function CardList() {
 	const [dataB, setDataB] = useState(false);
 
 	// Set color after comparing the values of both estates
-	const [priceIsGreater, setPriceIsGreater] = useState("white");
-	const [floorAreaIsGreater, setFoorAreaIsGreater] = useState("white");
-	const [landAreaIsGreater, setLandAreaIsGreater] = useState("white");
+	const [priceComparison, setPriceComparison] = useState("white");
+	const [floorComparison, setFloorComparison] = useState("white");
+	const [landComparison, setLandComparison] = useState("white");
 	const [pageIndex, setPageIndex] = useState([0, 10]);
 
 	// fetch section
@@ -37,21 +37,21 @@ function CardList() {
 
 			// update color to red or green depending on value
 			if (priceA > priceB) {
-				setPriceIsGreater(["tomato", "lightgreen"]);
+				setPriceComparison(["tomato", "lightgreen"]);
 			} else {
-				setPriceIsGreater(["lightgreen", "tomato"]);
+				setPriceComparison(["lightgreen", "tomato"]);
 			}
 
 			if (floorAreaA > floorAreaB) {
-				setFoorAreaIsGreater(["lightgreen", "tomato"]);
+				setFloorComparison(["lightgreen", "tomato"]);
 			} else {
-				setFoorAreaIsGreater(["tomato", "lightgreen"]);
+				setFloorComparison(["tomato", "lightgreen"]);
 			}
 
 			if (landAreaA > landAreaB) {
-				setLandAreaIsGreater(["lightgreen", "tomato"]);
+				setLandComparison(["lightgreen", "tomato"]);
 			} else {
-				setLandAreaIsGreater(["tomato", "lightgreen"]);
+				setLandComparison(["tomato", "lightgreen"]);
 			}
 		} else {
 			return;
@@ -108,10 +108,10 @@ function CardList() {
 				{dataA ? (
 					<div onClick={() => setDataA(null)}>
 						<MainCard
-							card={dataA}
-							priceIsGreater={priceIsGreater[0]}
-							floorAreaIsGreater={floorAreaIsGreater[0]}
-							landAreaIsGreater={landAreaIsGreater[0]}
+							data={dataA}
+							priceComparison={priceComparison[0]}
+							floorComparison={floorComparison[0]}
+							landComparison={landComparison[0]}
 						/>
 					</div>
 				) : null}
@@ -119,10 +119,10 @@ function CardList() {
 				{dataB ? (
 					<div onClick={() => setDataB(null)}>
 						<MainCard
-							card={dataB}
-							priceIsGreater={priceIsGreater[1]}
-							floorAreaIsGreater={floorAreaIsGreater[1]}
-							landAreaIsGreater={landAreaIsGreater[1]}
+							data={dataB}
+							priceComparison={priceComparison[1]}
+							floorComparison={floorComparison[1]}
+							landComparison={landComparison[1]}
 						/>
 					</div>
 				) : null}
