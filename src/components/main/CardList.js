@@ -91,7 +91,6 @@ function CardList() {
 						Next 10
 					</div>
 				</div>
-
 				<div className="card__list__gallery">
 					{list.slice(pageIndex[0], pageIndex[1]).map((item, key) => {
 						return (
@@ -110,21 +109,21 @@ function CardList() {
 						);
 					})}
 				</div>
-
+				{!dataA && !dataB ? <h2>Select estates for comparison</h2> : null}
 				<div className="main__cards">
 					{dataA ? (
-						<div onClick={() => setDataA(null)}>
+						<div className="main__card" onClick={() => setDataA(null)}>
 							<MainCard
 								data={dataA}
 								priceComparison={priceComparison[0]}
 								floorComparison={floorComparison[0]}
 								landComparison={landComparison[0]}
-							/>
+							/>{" "}
 						</div>
 					) : null}
 
 					{dataB ? (
-						<div onClick={() => setDataB(null)}>
+						<div className="main__card" onClick={() => setDataB(null)}>
 							<MainCard
 								data={dataB}
 								priceComparison={priceComparison[1]}

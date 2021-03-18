@@ -19,9 +19,11 @@ function MainCard(props) {
 	} = props;
 
 	return (
-		<div className="main__card">
+		<>
 			<span className="main__card--close">X</span>
-			<div>{images ? <img src={images && images[0]} alt={name} /> : null}</div>
+			<div className="main__card__image__container">
+				{images ? <img src={images && images[0]} alt={name} /> : null}
+			</div>
 			<div className="main__card__details">
 				<div>{name}</div>
 				<div
@@ -32,7 +34,7 @@ function MainCard(props) {
 					<span className="text--bold">Price</span>
 					<span>{prize_czk} CZK</span>
 				</div>
-				<div>
+				<div className="locality">
 					<span className="text--bold">Locality</span>
 					<span>{locality}</span>
 				</div>
@@ -57,7 +59,7 @@ function MainCard(props) {
 				{company_logo ? <img src={company_logo} alt={name} /> : null}
 				<p>{company_name}</p>
 			</div>
-		</div>
+		</>
 	);
 }
 
