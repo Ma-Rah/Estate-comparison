@@ -182,18 +182,17 @@ h2 {
 	border-radius: 0.25rem;
 	cursor: pointer;
 	width: 45%;
-	height: 21rem;
+	height: 20rem;
 	margin: 0.25rem;
 	font-size: 0.6rem;
 
 	@media (min-width: 768px) {
-		height: 40rem;
+		height: 30rem;
 		font-size: 1rem;
 	}
 
 	@media (min-width: 1024px) {
-		height: 50rem;
-		font-size: 1.2rem;
+		height: 40rem;
 	}
 
 	&:hover {
@@ -201,6 +200,7 @@ h2 {
 	}
 
 	&--close {
+		padding: 0 0.3rem;
 		color: rgb(226, 104, 104);
 	}
 
