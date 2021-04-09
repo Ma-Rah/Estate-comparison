@@ -229,6 +229,7 @@ h2 {
 
     @media (min-width: 768px) {
       font-size: 0.7rem;
+      margin-bottom: 0.5rem;
     }
 
     @media (min-width: 1024px) {
@@ -257,6 +258,15 @@ h2 {
     cursor: pointer;
     border: 1px rgba(51, 51, 51, 0.05) solid;
     text-align: center;
+    font-size: 0.5rem;
+    @media (min-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 1.5rem;
+    }
+
     &__container {
       display: flex;
       justify-content: space-evenly;
@@ -393,4 +403,9 @@ h2 {
       }
     }
   }
+}
+
+.comparison__button {
+  background-color: white;
+  border: 1px solid black;
 }

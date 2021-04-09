@@ -6,8 +6,11 @@ function CardList() {
   // useState section
   const [list, setList] = useState([]);
   const [detailedCard, setDetailedCard] = useState(null);
-  const [dataA, setDataA] = useState(false);
-  const [dataB, setDataB] = useState(false);
+  const [dataA, setDataA] = useState(null);
+  const [dataB, setDataB] = useState(null);
+  // Save data for returning to comparison after viewing details
+  const [prevDataA, setPrevDataA] = useState(null);
+  const [prevDataB, setPrevDataB] = useState(null);
 
   // Set color after comparing the values of both estates
   const [priceComparison, setPriceComparison] = useState(["white", "white"]);
@@ -61,6 +64,9 @@ function CardList() {
       } else {
         setLandComparison(["tomato", "lightgreen"]);
       }
+
+      setPrevDataA(dataA);
+      setPrevDataB(dataB);
     } else {
       return;
     }
@@ -116,9 +122,24 @@ function CardList() {
             );
           })}
         </div>
-        {(!dataA && !dataB) || detailedCard ? (
+        {!dataA && !dataB && !detailedCard ? (
           <h2>Select two estates for comparison</h2>
         ) : null}
+
+        {detailedCard && (
+          <button
+            onClick={() => {
+              setDetailedCard(null);
+              setDataA(prevDataA);
+              setDataB(prevDataB);
+            }}
+            className="card__list__update__button text--bold"
+          >
+            {" "}
+            Back to comparison{" "}
+          </button>
+        )}
+
         <div className="main__cards">
           {dataA ? (
             <div className="main__card">
